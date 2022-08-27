@@ -1,2 +1,2 @@
-See live code demo at www.oceanlife.app
+See live code demo at https://oceanlife.app/
 
