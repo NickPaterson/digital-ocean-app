@@ -1,3 +1,4 @@
+import React from 'react'
 import '../css/StartTab.css'
 import Bubbles from './Bubbles'
 

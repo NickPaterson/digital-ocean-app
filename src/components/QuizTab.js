@@ -1,3 +1,4 @@
+import React from 'react'
 import {useState, useEffect} from 'react'
 import {nanoid} from 'nanoid'
 import QuizQuestions from './QuizQuestions'
