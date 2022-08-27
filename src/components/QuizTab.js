@@ -53,11 +53,11 @@ function QuizTab() {
       if (formData[i].checked === formData[i].correctAnswer)  {
         setCorrectAnswers(correctAnswers => correctAnswers + 1)
         const correctEl = document.getElementById(formData[i].checkedId).nextSibling
-        correctEl.style.backgroundColor = 'green'
+        correctEl.style.backgroundColor = '#25a725'
         correctEl.style.color = 'white'
       } else {
         const incorrectEl = document.getElementById(formData[i].checkedId).nextSibling
-        incorrectEl.style.backgroundColor = 'red'
+        incorrectEl.style.backgroundColor = '#db3838'
         incorrectEl.style.color = 'white'
       }
     }
