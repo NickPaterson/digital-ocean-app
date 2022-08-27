@@ -94,7 +94,7 @@ function QuizTab() {
       <div className="QuizQuestion__modal">
         <form className='form-quiz'>
           {questionElements}
-          {(setAnswersChecked) 
+          {(answersChecked) 
             &&  <p className='correctAnswers'>
                   You got {correctAnswers} out of {formData.length} correct!
                 </p>}
