@@ -1,6 +1,8 @@
 
 function QuizQuestions(props) {
+
     const {questionId, question, answers, checked, updateForm} = props
+    console.log(question)
     const answersElements = answers.map((answer, index) => {
         const inputName = `${questionId}-answer${index}`
         

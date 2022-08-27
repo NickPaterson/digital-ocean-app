@@ -8,6 +8,8 @@ function QuizTab() {
   const [formData, setFormData] = useState([])
   const [answersChecked, setAnswersChecked] = useState(false)
   const [hasReset, setHasReset] = useState(false)
+  const [correctAnswers, setCorrectAnswers] = useState(0)
+
   useEffect(() => {
     fetch('https://opentdb.com/api.php?amount=4&category=27&type=multiple')
       .then(res => res.json())
@@ -46,8 +48,10 @@ function QuizTab() {
 
   function submitAnswers(e) {
     e.preventDefault()
+
     for (let i = 0; i < formData.length; i++) {
       if (formData[i].checked === formData[i].correctAnswer)  {
+        setCorrectAnswers(correctAnswers => correctAnswers + 1)
         const correctEl = document.getElementById(formData[i].checkedId).nextSibling
         correctEl.style.backgroundColor = 'green'
         correctEl.style.color = 'white'
@@ -57,11 +61,15 @@ function QuizTab() {
         incorrectEl.style.color = 'white'
       }
     }
+    
+    
     setAnswersChecked(true)
   }
 
   function resetQuestions(e) {
     e.preventDefault()
+    setAnswersChecked(false)
+    setCorrectAnswers(0)
     setHasReset(prevReset => !prevReset)
   }
 
@@ -86,6 +94,10 @@ function QuizTab() {
       <div className="QuizQuestion__modal">
         <form className='form-quiz'>
           {questionElements}
+          {(correctAnswers > 0) 
+            &&  <p className='correctAnswers'>
+                  You got {correctAnswers} out of {formData.length} correct!
+                </p>}
           {(answersChecked) 
             ? <button className='btn' onClick={resetQuestions}>Reset</button>
             : <button className='btn' onClick={submitAnswers}>Check Answers</button>
