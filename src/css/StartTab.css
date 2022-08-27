@@ -1,0 +1,22 @@
+.StartTab__wrapper {
+    position: relative;
+    height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.StartTab__modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rbga(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 25%);
+    width: 80%;
+}
+

@@ -1,13 +1,22 @@
-import './App.css';
-
+import { useState } from 'react'
+import './App.css'
+import StartTab from './components/StartTab.js'
+import QuizTab from './components/QuizTab.js'
 function App() {
+  const [isRunning, setIsRunning] = useState(false)
+
+  function startQuiz() {
+    setIsRunning(true)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="/images/logo.png" className="App-logo" alt="logo" />
-      </header>
+      {isRunning 
+        ? <QuizTab />
+        : <StartTab startQuiz={startQuiz} />
+      }
     </div>
   );
 }
 
-export default App;
+export default App

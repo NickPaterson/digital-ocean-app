@@ -1,0 +1,73 @@
+.QuizQuestion__wrapper {
+    position: relative;
+    height: 100vh;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.QuizQuestion__modal {
+    position: absolute;
+    background: rbga(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    width:90%;
+    backdrop-filter: blur(5px);
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 25%);
+    margin: 10px auto 0;
+    text-align: left;
+    padding: 1em 4em; 
+}
+.form-quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+    align-items: left;
+}
+.form-quiz fieldset {
+    margin: 1em 0;
+    border: none;
+    border-bottom: 1px solid rgba(10, 10, 10, .25);
+    padding: 2em 0;
+    display: flex;
+    justify-content: space-between;
+}
+.form-quiz legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.form-quiz input[type="radio"] {
+    display: none;
+}
+.form-quiz label {
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    padding: .5em 1em;
+    margin: -.5em 1em 1em 1em;
+    box-shadow: -2px 2px 2px rgba(10, 10, 10, 0.1);
+    flex: 1;
+    text-align: center ;
+}
+.form-quiz label:first-of-type {
+    margin-left: 2em;
+}
+.form-quiz label:last-of-type {
+    margin-right: 2em;
+}
+.form-quiz label:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.form-quiz input[type="radio"]:checked + label {
+    background: rgb(0 57 103 / 63%);
+    color: #ffffff;
+}
+
+.form-quiz .correct + label {
+    background-color: green;
+}
